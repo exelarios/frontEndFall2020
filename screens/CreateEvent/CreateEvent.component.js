@@ -11,7 +11,7 @@ import DateModal from '../../components/DateModal/DateModal.component';
 // Context
 import { EventContext } from '../../context/EventContext'
 
-const CreateEvent = () => {
+const CreateEvent = ({navigation}) => {
 
     const form = {
         title: "",
@@ -30,8 +30,9 @@ const CreateEvent = () => {
     const { allEvents, setEvents } = useContext(EventContext);
 
     const onSubmitData = () => {
-        console.log("yeee")
         setEvents([...allEvents, eventData]);
+        console.log(eventData);
+        navigation.goBack("Events");
     }
 
     return(
@@ -117,7 +118,6 @@ const CreateEvent = () => {
                 containerStyle={{marginTop: '10%', marginBottom: '15%'}}
                 onPress={onSubmitData}
 			/>
-            {console.log(eventData)}
         </ScrollView>
     );
 }

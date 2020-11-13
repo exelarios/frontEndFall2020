@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Text, Image, View, Alert, Modal} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-//import { Context } from '../../Context';
 import styles from './EventCard.styles';
 
 import { UserContext } from '../../context/UserContext';
@@ -40,7 +39,8 @@ const EventCard = (props) => {
                     <Text style={styles.titlePopUp}> {props.title} </Text>
                     <Image style={styles.imagePopUp} resizeMode="contain" source={props.source} />
                     <Text style={styles.descPopUp}> {props.desc} </Text>
-                    <Text style={styles.datePopUp}> {props.date} </Text>
+                    <Text style={styles.datePopUp}> {props.startDate} </Text>
+                    <Text style={styles.datePopUp}> {props.endDate}</Text>
                     <Button
                         onPress={() => {
                             Alert.alert("You successfully have registered for " + props.title + " on " + props.date + "!");

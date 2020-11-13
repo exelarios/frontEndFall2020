@@ -12,7 +12,6 @@ import { EventContext } from '../../context/EventContext';
 const axios = require("axios");
 
 const Feed = () => {
-  //const [events, setEvents] = useState([]);
   const { allEvents } = useContext(EventContext);
   const { userEvents } = useContext(UserContext);
 
